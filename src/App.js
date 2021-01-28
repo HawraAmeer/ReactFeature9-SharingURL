@@ -1,11 +1,5 @@
 // Styling
-import {
-  Description,
-  GlobalStyle,
-  ShopImage,
-  ThemeButton,
-  Title,
-} from "./styles";
+import { GlobalStyle } from "./styles";
 import React, { useState } from "react";
 
 import Home from "./components/Home";
@@ -18,6 +12,8 @@ import { ThemeProvider } from "styled-components";
 import products from "./products";
 
 import { Route, Switch } from "react-router";
+
+import { Helmet } from "react-helmet";
 
 const theme = {
   light: {
@@ -55,11 +51,14 @@ function App() {
       <NavBar currentTheme={currentTheme} toggleTheme={toggleTheme} />
 
       <Switch>
-        <Route path="/" exact>
-          <Home />
+        <Route path="/products/:productSlug">
+          <ProductDetail products={products} deleteProduct={deleteProduct} />
         </Route>
         <Route path="/products">
           <ProductList products={_products} deleteProduct={deleteProduct} />
+        </Route>
+        <Route path="/" exact>
+          <Home />
         </Route>
       </Switch>
     </ThemeProvider>

@@ -1,7 +1,6 @@
 // Styling
 
 import { Logo, ThemeButton, NavProduct } from "../styles";
-import { Link } from "react-router-dom";
 
 const NavBar = (props) => {
   const logoTheme = () =>

@@ -47,6 +47,9 @@ function App() {
   return (
     <ThemeProvider theme={theme[currentTheme]}>
       <GlobalStyle />
+      <Helmet>
+        <title>Cookies & Beyond</title>
+      </Helmet>
 
       <NavBar currentTheme={currentTheme} toggleTheme={toggleTheme} />
 

@@ -3,6 +3,7 @@ import DeleteButton from "./buttons/DeleteButton";
 // Styling
 import { DetailWrapper } from "../styles";
 import { Redirect, useParams } from "react-router";
+import { Helmet } from "react-helmet";
 
 const ProductDetail = (props) => {
   const products = props.products;
@@ -14,6 +15,9 @@ const ProductDetail = (props) => {
 
   return (
     <DetailWrapper>
+      <Helmet>
+        <title>{product.name}</title>
+      </Helmet>
       <h1>{product.name}</h1>
       <img src={product.image} alt={product.name} />
       <p>{product.description}</p>

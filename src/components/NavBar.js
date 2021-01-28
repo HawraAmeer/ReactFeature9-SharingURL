@@ -11,17 +11,20 @@ const NavBar = (props) => {
   return (
     <nav className="navbar navbar-expand">
       <h4 className="navbar-brand">
-        <Logo to="/">
+        <Logo exact to="/">
           <img src={logoTheme()} alt=" "></img>
         </Logo>
       </h4>
       <div className="navbar-nav ml-auto">
-        <Link to="/" className="nav-item" style={{ padding: "0.25em 1em" }}>
+        <NavProduct
+          to="/"
+          exact
+          className="nav-item"
+          style={{ padding: "0.25em 1em" }}
+        >
           Home
-        </Link>
-        <ThemeButton className="nav-item" onClick={props.toggleTheme}>
-          {props.currentTheme === "light" ? "Dark" : "Light"} Mode
-        </ThemeButton>
+        </NavProduct>
+
         <NavProduct
           to="/products"
           className="nav-item"
@@ -29,6 +32,9 @@ const NavBar = (props) => {
         >
           Products
         </NavProduct>
+        <ThemeButton className="nav-item" onClick={props.toggleTheme}>
+          {props.currentTheme === "light" ? "Dark" : "Light"} Mode
+        </ThemeButton>
       </div>
     </nav>
   );

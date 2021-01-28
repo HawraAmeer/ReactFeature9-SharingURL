@@ -89,9 +89,9 @@ export const Logo = styled(Link)`
 `;
 
 export const NavProduct = styled(NavLink)`
-  color: "#242424";
+  color: ${(props) => props.theme.mainColor};
   &.active {
-    color: maroon;
+    color: ${(props) => props.theme.red} !important;
     font-weight: bold;
   }
 `;
